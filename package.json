@@ -1,0 +1,34 @@
+{
+  "name": "javascript-blockchain",
+  "version": "1.0.0",
+  "description": "Learning Blockchain with JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "babel": "babel --presets es2015 js/index.js -o build/bundle.js",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arajajyothibabu/javascript-blockchain.git"
+  },
+  "keywords": [
+    "js",
+    "es6",
+    "javascript",
+    "blockchain",
+    "bitcoin",
+    "cryptocurrency"
+  ],
+  "author": "Jyothi Babu Araja <arajajyothibabu@gmail.com> (https://arajajyothibabu.github.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arajajyothibabu/javascript-blockchain/issues"
+  },
+  "homepage": "https://github.com/arajajyothibabu/javascript-blockchain#readme",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-preset-es2015": "6.24.1",
+    "http-server": "0.11.1"
+  }
+}
