@@ -7,22 +7,32 @@ export default class Block {
 
     /**
      *
-     * @param index
      * @param timestamp
-     * @param data
+     * @param transactions
      * @param previousHash
      */
-    constructor(index, timestamp, data, previousHash = ""){
-        this.index = index;
+    constructor(timestamp, transactions, previousHash = ""){
         this.timestamp = timestamp;
-        this.data = data;
+        this.transactions = transactions;
         this.previousHash = previousHash;
         this.hash = this.calculateHash();
+        this.nonce = 0;
     }
 
     /**
      * hash calculation
      */
-    calculateHash = () => SHA256(this.index + this.previousHash + this.timestamp + JSON.stringify(this.data)).toString();
+    calculateHash = () => SHA256(this.previousHash + this.timestamp + JSON.stringify(this.transactions) + this.nonce).toString();
+
+    /**
+     *
+     * @param difficulty
+     */
+    mineBlock = (difficulty) => {
+        while(this.hash.substring(0, difficulty) !== Array(difficulty + 1).join('0')){
+            this.nonce++;
+            this.hash = this.calculateHash();
+        }
+    }
 
 }
